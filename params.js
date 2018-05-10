@@ -39,7 +39,7 @@ const config = Object.assign(
     root,
     seleniumPath,
     skip: [],
-    outputDir: path.dirname(explorer.filePath),
+    outputDir: path.dirname(explorer.filepath),
   },
   explorer.config
 )

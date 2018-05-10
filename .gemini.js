@@ -1,13 +1,12 @@
-const path = require('path')
-
 const { config, filepath } = require('./params')
 
 module.exports = {
   rootUrl: '',
-  screenshotsDir: config.outputDir || path.dirname(filepath),
+  screenshotsDir: config.outputDir,
   screenshotMode: 'viewport',
   compositeImage: true,
   sessionsPerBrowser: 5,
+  retry: 3,
   browsers: {
     chrome: {
       desiredCapabilities: {
