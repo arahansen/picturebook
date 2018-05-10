@@ -4,7 +4,8 @@ const { config, filepath } = require('./params')
 
 module.exports = {
   rootUrl: '',
-  screenshotsDir: config.outputDir || filepath,
+  screenshotsDir: config.outputDir || path.dirname(filepath),
+  screenshotMode: 'viewport',
   compositeImage: true,
   browsers: {
     chrome: {

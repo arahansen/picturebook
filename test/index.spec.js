@@ -56,7 +56,7 @@ scenarios.forEach(page => {
       .before(function(actions) {
         actions.executeJS(function(window) {
           const body = window.document.querySelector('body')
-          body.style.overflowX = 'hidden'
+          body.style.overflow = 'hidden'
           body.style.height = '100vh'
           body.style.width = '100vw'
         })

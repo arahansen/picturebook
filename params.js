@@ -50,6 +50,7 @@ const config = Object.assign(
   'storyPath',
   'wrapStory',
   'webpackConfig',
+  'outputDir',
 ].forEach(key => {
   if (key in config) {
     config[key] = resolve(config.root, config[key])
