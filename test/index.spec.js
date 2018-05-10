@@ -1,5 +1,6 @@
-/* eslint-disable no-undef, no-param-reassign, func-names, prefer-arrow-callback */
 const { storyFolders } = require('../shared/storyFolders')
+const { flattenDeep } = require('lodash')
+const { skip } = require('../params')
 
 const targetUrlIndex = process.argv.indexOf('--url')
 
@@ -45,6 +46,7 @@ const scenarios = Object.keys(storyFolders)
     []
   )
 
+/* eslint-disable no-undef, func-names, prefer-arrow-callback */
 scenarios.forEach(page => {
   gemini.suite(page.label, suite => {
     suite
@@ -61,3 +63,4 @@ scenarios.forEach(page => {
       .capture('baseline')
   })
 })
+/* eslint-enable no-undef, func-names, prefer-arrow-callback */
