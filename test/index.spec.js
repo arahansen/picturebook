@@ -20,7 +20,9 @@ function isPartialMatch(reference, partial) {
 function partialSkipMatch(props) {
   const { name, folderpath } = props
 
-  return !skip.some(match => isPartialMatch(name, match) || isPartialMatch(folderpath, match))
+  return !(skip || []).some(
+    match => isPartialMatch(name, match) || isPartialMatch(folderpath, match)
+  )
 }
 
 function formatProperties(props) {
@@ -54,7 +56,7 @@ scenarios.forEach(page => {
       .before(function(actions) {
         actions.executeJS(function(window) {
           const body = window.document.querySelector('body')
-          body.style.padding = 0
+          body.style.overflowX = 'hidden'
           body.style.height = '100vh'
           body.style.width = '100vw'
         })

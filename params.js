@@ -3,7 +3,6 @@ const { dirname, resolve, join } = require('path')
 const findUp = require('find-up')
 const cosmiconfig = require('cosmiconfig')
 const { name } = require('./package.json')
-const browsers = require('./browsers')
 const seleniumPath = require('selenium-server-standalone-jar').path
 
 const root = dirname(findUp.sync('package.json'))
@@ -20,7 +19,6 @@ if (!explorer) {
 const config = Object.assign(
   {},
   {
-    browsers: 'default' in browsers ? browsers.default : browsers,
     browserThreshold: 3.7,
     desktopReferenceBrowser: 'chrome',
     entryPoint: join(picturebookPath, 'index.js'),

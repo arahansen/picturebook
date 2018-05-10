@@ -32,5 +32,5 @@ setOptions({
 setAddon(JSXAddon)
 
 configure(() => {
-  require(preval`module.exports=require('../params').entryPoint`)
+  require(preval`module.exports=require('../params').config.entryPoint`)
 }, module)
