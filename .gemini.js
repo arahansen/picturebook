@@ -20,6 +20,7 @@ module.exports = {
       sauce: {
         username: process.env.SAUCE_USERNAME,
         accessKey: process.env.SAUCE_ACCESS_KEY,
+      },
     },
   },
 }
