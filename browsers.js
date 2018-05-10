@@ -7,16 +7,6 @@ module.exports = {
       chromedriverVersion: '2.24',
       screenResolution: '1280x960',
     },
-    custom_vars: {
-      name: 'chrome',
-      platform: 'desktop',
-      extract: {
-        top: 0,
-        left: 0,
-        width: 1280,
-        height: 854,
-      },
-    },
   },
   ie11: {
     desiredCapabilities: {
@@ -24,16 +14,6 @@ module.exports = {
       version: '11.103',
       browserName: 'internet explorer',
       screenResolution: '1280x960',
-    },
-    custom_vars: {
-      name: 'ie',
-      platform: 'desktop',
-      extract: {
-        top: 0,
-        left: 0,
-        width: 1280,
-        height: 854,
-      },
     },
   },
   edge: {
@@ -43,16 +23,6 @@ module.exports = {
       browserName: 'MicrosoftEdge',
       screenResolution: '1280x960',
     },
-    custom_vars: {
-      name: 'edge',
-      platform: 'desktop',
-      extract: {
-        top: 0,
-        left: 0,
-        width: 1280,
-        height: 854,
-      },
-    },
   },
   firefox: {
     desiredCapabilities: {
@@ -61,10 +31,6 @@ module.exports = {
       browserName: 'firefox',
       screenResolution: '1280x960',
     },
-    custom_vars: {
-      name: 'firefox',
-      platform: 'desktop',
-    },
   },
   safari: {
     desiredCapabilities: {
@@ -72,16 +38,6 @@ module.exports = {
       version: '11.0',
       browserName: 'safari',
       screenResolution: '1280x960',
-    },
-    custom_vars: {
-      name: 'safari',
-      platform: 'desktop',
-      extract: {
-        top: 0,
-        left: 0,
-        width: 1280,
-        height: 854,
-      },
     },
   },
   iphone7: {
@@ -93,16 +49,6 @@ module.exports = {
       platformName: 'iOS',
       platformVersion: '10.3',
     },
-    custom_vars: {
-      name: 'iphone7',
-      platform: 'mobile',
-      extract: {
-        top: 193,
-        left: 0,
-        width: 1242,
-        height: 1882,
-      },
-    },
   },
   galaxy4: {
     desiredCapabilities: {
@@ -112,16 +58,6 @@ module.exports = {
       deviceOrientation: 'portrait',
       platformVersion: '4.4',
       platformName: 'Android',
-    },
-    custom_vars: {
-      name: 'galaxy4',
-      platform: 'mobile',
-      extract: {
-        top: 154,
-        left: 0,
-        width: 720,
-        height: 1126,
-      },
     },
   },
 }
