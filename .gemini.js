@@ -7,6 +7,7 @@ module.exports = {
   screenshotsDir: config.outputDir || path.dirname(filepath),
   screenshotMode: 'viewport',
   compositeImage: true,
+  sessionsPerBrowser: 5,
   browsers: {
     chrome: {
       desiredCapabilities: {

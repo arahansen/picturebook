@@ -2,6 +2,7 @@
 const { dirname, resolve, join } = require('path')
 const findUp = require('find-up')
 const cosmiconfig = require('cosmiconfig')
+const path = require('path')
 const { name } = require('./package.json')
 const seleniumPath = require('selenium-server-standalone-jar').path
 
@@ -38,6 +39,7 @@ const config = Object.assign(
     root,
     seleniumPath,
     skip: [],
+    outputDir: path.dirname(explorer.filePath),
   },
   explorer.config
 )
