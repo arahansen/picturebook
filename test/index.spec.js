@@ -1,7 +1,17 @@
 /* eslint-disable no-undef, no-param-reassign, func-names, prefer-arrow-callback */
-const { config } = require('../config')
+const { storyFolders } = require('../shared/storyFolders')
 
-config.scenarios.forEach(page => {
+const scenarios = Object.keys(storyFolders)
+  .map(kind => ({
+    kind,
+    storyNames: flattenDeep(getStories(storyFolders[kind])),
+  }))
+  .reduce(
+    (prev, story) => prev.concat(story.storyNames.filter(partialSkipMatch).map(formatProperties)),
+    []
+  )
+
+scenarios.forEach(page => {
   gemini.suite(page.label, suite => {
     suite
       .setUrl(page.url)

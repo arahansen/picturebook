@@ -27,6 +27,8 @@
     "cosmiconfig": "4.0.0",
     "find-up": "2.1.0",
     "fs-extra": "5.0.0",
+    "gemini": "5.7.0",
+    "gemini-sauce": "1.0.1",
     "harmony-reflect": "1.6.0",
     "identity-obj-proxy": "3.0.0",
     "kcd-scripts": "^0.36.0",
