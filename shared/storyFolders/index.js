@@ -1,16 +1,17 @@
 /* eslint-disable global-require, import/no-dynamic-require */
-const { storyPath } = require('../../params')
+const {
+  config: { storyPath },
+} = require('../../params')
 
 const { loadWebpack } = require('./webpack')
 
-const isTest =
-  process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'test:image'
+const isTest = process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'test:image'
 
 let storyFolders
 
 if (!isTest) {
   storyFolders = loadWebpack(
-    require.context(preval`module.exports=require('../../params').storyPath`),
+    require.context(preval`module.exports=require('../../params').config.storyPath`),
     true,
     /.+\.(md|png|js)$/i
   )

@@ -1,21 +1,17 @@
 /* eslint-disable global-require, import/no-dynamic-require */
 const { join } = require('path')
 const { set } = require('lodash')
+const { getStoryPaths, endsWith, doesntEndWith, getImagePath } = require('./shared')
 const {
-  getStoryPaths,
-  endsWith,
-  doesntEndWith,
-  getImagePath,
-} = require('./shared')
-const { storiesUrl } = require('../../params')
+  config: { storiesUrl },
+} = require('../../params')
 
 function getNote(files, filepath, loader) {
   const mdFile = filepath.replace(/\.js$/, '.md')
   const hasMd = files.indexOf(mdFile) !== -1
   const url = filepath.replace('./', storiesUrl)
   const note = hasMd ? loader(mdFile).default || loader(mdFile) : ''
-  const footer =
-    require(preval`module.exports=require('../../params').markdownFooter`) || ''
+  const footer = require(preval`module.exports=require('../../params').config.markdownFooter`) || ''
 
   return `${note}${footer.replace('[[url]]', url)}`
 }

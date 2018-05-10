@@ -3,7 +3,7 @@
 import { configure, setAddon } from '@storybook/react'
 import { setOptions } from '@storybook/addon-options'
 import JSXAddon from 'storybook-addon-jsx'
-import params from '../params'
+import { config } from '../params'
 
 if (
   typeof window === 'object' &&
@@ -25,8 +25,8 @@ if (
 setOptions({
   downPanelInRight: true,
   hierarchySeparator: /\./,
-  name: params.projectName,
-  url: params.projectUrl,
+  name: config.projectName,
+  url: config.projectUrl,
 })
 
 setAddon(JSXAddon)

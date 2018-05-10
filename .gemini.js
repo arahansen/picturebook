@@ -1,12 +1,10 @@
 const path = require('path')
 
-const config = require('./params')
-
-const { dir: projectDir } = path.parse(filepath)
+const { config, filepath } = require('./params')
 
 module.exports = {
   rootUrl: '',
-  screenshotsDir: config.outputDir || projectDir,
+  screenshotsDir: config.outputDir || filepath,
   compositeImage: true,
   browsers: {
     chrome: {
@@ -19,7 +17,7 @@ module.exports = {
   },
   system: {
     plugins: {
-      sauce: config.image
+      sauce: config.image,
     },
   },
 }

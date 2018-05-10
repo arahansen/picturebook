@@ -3,7 +3,9 @@ const cssNano = require('cssnano')
 const cssNesting = require('postcss-nesting')
 const cssNext = require('postcss-cssnext')
 const cssFlexFix = require('postcss-flexbugs-fixes')
-const { postcssConfig, root } = require('../params')
+const {
+  config: { postcssConfig, root },
+} = require('../params')
 
 module.exports = {
   plugins: [

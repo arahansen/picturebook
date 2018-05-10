@@ -6,8 +6,8 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { storyFolders, WithExtensions } from './shared'
 
 let wrapStory = require(preval`
-  const params = require('./params')
-  module.exports = params.wrapStory || 'lodash/identity'
+  const {config} = require('./params')
+  module.exports = config.wrapStory || 'lodash/identity'
 `)
 
 wrapStory = wrapStory.default || wrapStory
@@ -40,8 +40,7 @@ function configStories(storiesOfName, storiesModule) {
       showDefaultProps: false,
       useBooleanShorthandSyntax: true,
       skip: 1, // assumes each story will have a WithExtensions wrapper, this config option skips that wrapper
-      displayName: element =>
-        unwrapDisplayNameFromHOC(getDisplayName(element.type)),
+      displayName: element => unwrapDisplayNameFromHOC(getDisplayName(element.type)),
     })
 
   return {

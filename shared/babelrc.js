@@ -1,6 +1,8 @@
 /* eslint-disable global-require, import/no-dynamic-require */
 const { readFileSync } = require('fs')
-const { babelConfig } = require('../params')
+const {
+  config: { babelConfig },
+} = require('../params')
 
 let config = {
   presets: [
@@ -14,12 +16,7 @@ let config = {
     ],
     'react',
   ],
-  plugins: [
-    'preval',
-    'lodash',
-    'transform-object-rest-spread',
-    'transform-class-properties',
-  ],
+  plugins: ['preval', 'lodash', 'transform-object-rest-spread', 'transform-class-properties'],
 }
 
 if (babelConfig) {
