@@ -17,7 +17,9 @@ module.exports = {
   },
   system: {
     plugins: {
-      sauce: config.image,
+      sauce: {
+        username: process.env.SAUCE_USERNAME,
+        accessKey: process.env.SAUCE_ACCESS_KEY,
     },
   },
 }
