@@ -15,6 +15,8 @@ module.exports = {
     require('@storybook/react/dist/server/build')
   },
   image() {
+    process.env.NODE_ENV = 'test:image'
+
     return runImageComparisonSuites()
   },
 }
